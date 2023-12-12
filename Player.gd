@@ -2,6 +2,7 @@ extends Area2D
 
 @export var speed = 400
 
+
 func _process(delta):
 	var velocity = Vector2.ZERO
 	if Input.is_action_pressed("move_left"):
@@ -15,3 +16,10 @@ func _process(delta):
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 	position += velocity * delta
+
+
+
+
+
+func _on_body_entered(body):
+	hide()
